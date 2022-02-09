@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>To-Do List</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   </head>
+   <body style="background-color: #ffffeb;">
+      <header class="py-3 border-bottom bg-white">
+         <a class="fs-4 text-dark text-decoration-none d-block text-center" href="/">To-Do List</a>
+      </header>
+      <div class="container">
+         <div class="row">
+            <div style="background-color: #f7f7e5;" class="col-sm-12 col-md-11 col-xl-10 col-xxl-9 mx-auto my-4 border">
+               <h1 class="fs-4 text-center py-4">To-Do List</h1>
+               <span class="d-block fs-6 text-center py-1">Öğe Ekle</span>
+               <div class="input-group py-4">
+                  <input id="itemtext" type="text" class="form-control" placeholder="Yeni Öğe Ekle" maxlength="30">
+                  <button onclick="AddItem()" class="btn btn-outline-success" type="button" id="add">Ekle</button>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div style="background-color: #0000ff30;" class="col-sm-12 col-md-11 col-xl-10 col-xxl-9 mx-auto my-4 border">
+               <h1 class="fs-4 text-center py-4">Yapılacaklar</h1>
+               <span class="d-block fs-6 text-center pb-3">Tüm Öğeler</span>
+               <div id="waititemlist">
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div style="background-color: #00ff0030;" class="col-sm-12 col-md-11 col-xl-10 col-xxl-9 mx-auto my-4 border">
+               <h1 class="fs-4 text-center py-4">Tamamlananlar</h1>
+               <span class="d-block fs-6 text-center pb-3">Tüm Öğeler</span>
+               <div id="okitemlist">
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div style="background-color: #f003;" class="col-sm-12 col-md-11 col-xl-10 col-xxl-9 mx-auto my-4 border">
+               <h1 class="fs-4 text-center py-4">Silinenler</h1>
+               <span class="d-block fs-6 text-center pb-3">Tüm Öğeler</span>
+               <div id="delitemlist">
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer class="py-3 border-top bg-white">
+         <a target="_blank" class="fs-6 text-dark text-decoration-none d-block text-center" href="https://gokhangunduz.com.tr">Gökhan Gündüz</a>
+      </footer>
+      <style>
+         .w-90 {
+         width: 90%;
+         }
+         .w-10 {
+         width: 10%;
+         }
+      </style>
+   </body>
+   <script src="/js/todo.js"></script>
+   <script>
+      let allitems = []
+      let okitems = []
+      let waititems = []
+      let delitems = []
+      DemoStart()
+      RefreshDom()
+   </script>
+</html>
